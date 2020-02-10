@@ -64,7 +64,7 @@ class DetailView {
                     buttonText: "Remove from favorites",
                      onclick: () => {
                         this.deleteFavorite(movieData.imdbID).then(() => {
-                            //app.switchView("HomeView")
+                            app.switchView("FavoritesView")
                         }) 
                     }
                 }
