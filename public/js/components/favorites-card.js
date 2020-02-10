@@ -5,7 +5,7 @@ class FavoritesCard {
 
     generateContent(parentContainer) {
         let card = document.createElement("div")
-        card.classList.add("w3-card", "w3-hover-shadow", "w3-half", "w3-padding")
+        card.classList.add("w3-card", "w3-hover-shadow", "w3-half", "w3-padding", "w3-margin")
         card.style.backgroundColor = this.options.cardColor
 
         card.onclick = this.options.onclick

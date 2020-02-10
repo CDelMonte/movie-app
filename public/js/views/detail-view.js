@@ -55,7 +55,7 @@ class DetailView {
                         this.saveFavorite(movieData.imdbID).then(() => {
                             app.switchView("FavoritesView")
                         })
-                    }
+                    },
                 },
                 deleteButtonData: {
                     showButton: this.showDeleteButton,
