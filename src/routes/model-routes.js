@@ -22,6 +22,25 @@ class ModelRoutes {
             })
         })
 
+        router.post("/delete/:modelName", (request, response) => {
+            let modelName = request.params.modelName
+            let data = request.body
+
+            let options = {
+                modelName: modelName,
+                data: data,
+                app: app
+            }
+
+            console.log("model routes options",options)
+
+            let model = new Model(options)
+
+            model.delete((data) => {
+                response.json(data)
+            })
+        })
+
         router.post("/find/:modelName", (request, response) => {
             let modelName = request.params.modelName
             let find = request.body

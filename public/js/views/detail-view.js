@@ -64,7 +64,7 @@ class DetailView {
                     buttonText: "Remove from favorites",
                      onclick: () => {
                         this.deleteFavorite(movieData.imdbID).then(() => {
-                            app.switchView("HomeView")
+                            //app.switchView("HomeView")
                         }) 
                     }
                 }
@@ -106,16 +106,18 @@ class DetailView {
         return promise
     }
 
-    /* deleteFavorite(id) {
+    deleteFavorite(id) {
         let promise = new Promise((resolve, reject) => {
-            let options = [{
+            let options = {
                 id: id
-            }]
+            }
 
-            db.collection.remove(, justOne: true)
+            axios.post("/api/delete/movies", options).then((response) => {
+                resolve(response.data)
+            })
 
         })
 
         return promise
-    } */
+    } 
 }
