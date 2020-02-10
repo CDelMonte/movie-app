@@ -21,12 +21,16 @@ class DetailCard {
         // Favorite Button
         let favoriteButton = this.createFavoriteButton(this.options.favoriteButtonData)
 
+        // Delete Button
+        let deleteButton = this.createDeleteButton(this.options.deleteButtonData)
+
         detailCard.append(header)
         detailCard.append(poster)
         detailCard.append(content)
         
         parentContainer.append(detailCard)
         parentContainer.append(favoriteButton)
+        parentContainer.append(deleteButton)
      }
 
      createHeader(data) {
@@ -58,7 +62,7 @@ class DetailCard {
             paragraph.append(item)
 
             container.append(paragraph)
-        })
+        }) 
 
         return container
      }
@@ -76,6 +80,24 @@ class DetailCard {
             favoriteButton.onclick = data.onclick
 
             container.append(favoriteButton)
+        }
+
+        return container
+     }
+
+     createDeleteButton(data) {
+        let container = document.createElement("div")
+        if(data.showButton) {
+            let deleteButton = document.createElement("button")
+            deleteButton.classList.add("w3-button")
+            deleteButton.style.marginTop = "16px"
+            deleteButton.style.float = "left"
+            deleteButton.style.backgroundColor = data.buttonColor
+
+            deleteButton.append(data.buttonText)
+            deleteButton.onclick = data.onclick
+
+            container.append(deleteButton)
         }
 
         return container

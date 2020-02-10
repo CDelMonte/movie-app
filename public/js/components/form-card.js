@@ -24,7 +24,7 @@ class FormCard {
 
         let formButton = document.createElement("button")
         formButton.classList.add("w3-button", "w3-margin")
-        formButton.style.backgroundColor = "#FFBF00"
+        formButton.style.backgroundColor = /* "#FFBF00" */ "lightgreen"
         formButton.append(this.options.formButtonName)
         formButton.onclick = this.options.onclick
 

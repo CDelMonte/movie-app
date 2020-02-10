@@ -3,7 +3,7 @@ class FavoritesView {
 
     generateNavBar(parentContainer) {
         let navBar = new NavBar({
-            title: "Movie Search",
+            title: "Movie Searcher",
             navData: [
                 {
                     name: "Home",
@@ -25,14 +25,14 @@ class FavoritesView {
             container.classList.add("w3-container")
     
             let viewTitle = document.createElement("h3")
-            viewTitle.append("Favorites View")
+            viewTitle.append("Favorite Movies")
     
             container.append(viewTitle)
 
             favorites.forEach((favoriteData) => {
                 this.getMovieData(favoriteData.id).then((favorite) => {
                     let favoritesCard = new FavoritesCard({
-                        cardColor: "#ffbf00",
+                        cardColor: "#F5F2F2",
                         cardData: [
                             {
                                 value: favorite.Title,
@@ -54,11 +54,12 @@ class FavoritesView {
                         onclick: () => {
                             // Pass favorite to detail view
                             app.store.showFavoriteButton = false
+                            app.store.showDeleteButton = true
                             app.store.movieId = favorite.imdbID
                             app.switchView("DetailView")
                         }
                     })
-                    
+
                     favoritesCard.generateContent(container)
                 })
             })

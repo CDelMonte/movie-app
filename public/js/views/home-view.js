@@ -4,7 +4,7 @@ class HomeView {
     generateNavBar(parentContainer) {
         console.log(parentContainer)
         let navBar = new NavBar({
-            title: "Movie Search",
+            title: "Movie Searcher",
             navData: [
                 {
                     name: "Home",
@@ -26,7 +26,7 @@ class HomeView {
         container.classList.add("w3-container")
 
         let viewTitle = document.createElement("h3")
-        viewTitle.append("Home View")
+        viewTitle.append("Welcome!")
 
         container.append(viewTitle)
 
@@ -53,7 +53,6 @@ class HomeView {
                 })
 
                 this.getMovieData(submitData)
-
             }
         })
 
